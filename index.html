@@ -11,6 +11,27 @@
 <body>
       <img src="img/hamburger.svg" alt="MENU" id="HamO" onclick="shopOpen()">
       <img src="img/hamburger.svg" alt="MENU" style="display:none;" id="HamC" onclick="shopClose()">
+      
+<!--
+      <header>
+      <h1>Clicker Game</h1>
+        <nav>
+          <a href="#" class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </a>
+          <ul class="clearfix menu">
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Upgrade</a></li>
+            <li><a href="#">Save</a></li>
+            <li><a href="#">Load</a></li>
+            <li><a href="#">Reset</a></li>
+          </ul>
+        </nav>
+      </header>
+-->
+      
 <div id="shop" class="animate-left" style="display: none;">
 
     <span class="Shop">Shop</span><br />
@@ -62,12 +83,11 @@
     
     
     </div>
-  </div>
   <div id="game">
 
       <img src="img/cookie.png" class="cookie active" onclick="addMoney(Click);"><br />
        <div class="counter">
-        <span id="MoneyCount">0</span>
+        <span id="MoneyCount">0.00</span>
         <img src="img/Dollar.png" alt="Cookie" class="miniCookie"><br />
         <button class="save BT" onclick="Save()">SAVE</button>
            <button class="load BT" onclick="Load()">LOAD</button>

@@ -1,5 +1,10 @@
-*{
-    padding: 0;
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
 }
 body{
     background: url("img/Wallpaper.png");
@@ -18,7 +23,8 @@ body{
   background: rgb(65, 65, 65);
   font-size: 32px;
   position: fixed;
-  /*overflow: auto;*/
+  overflow-y: auto;
+  max-height: 100%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;

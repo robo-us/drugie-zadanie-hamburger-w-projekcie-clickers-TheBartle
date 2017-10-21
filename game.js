@@ -44,7 +44,7 @@ function BuyBakers() {
         Money -= BakersCost;
         BakersCost = BakersCost + 14;
         Bakers += 1;
-        BakersPower += 0.2;
+        BakersPower += 0.3;
         document.getElementById("Bakers").innerHTML = Bakers;
         document.getElementById("BakersCost").innerHTML = BakersCost;
         cor.play();
@@ -52,7 +52,7 @@ function BuyBakers() {
     else {
       icor.play();
     }
-    }
+}
 function BuyGrandma() {
     if (Money >= GrandmaCost) {
         Money = Money - GrandmaCost;
@@ -150,7 +150,7 @@ function BuyClickUpgrade() {
 window.setInterval(
     function(){
     addMoney(GrandmaPower);
-}, 3000);
+}, 1000);
 //Bakers
   window.setInterval(
       function(){
@@ -159,7 +159,7 @@ window.setInterval(
 window.setInterval(
       function(){
       addMoney(GrandadPower);
-  }, 2000);
+  }, 1000);
 window.setInterval(
       function(){
       addMoney(CookieRoobotPower);
@@ -169,13 +169,11 @@ function shopOpen() {
     document.getElementById("shop").style.display = "block";
     document.getElementById("HamO").style.display = "none";
     document.getElementById("HamC").style.display = "block";
-    document.getElementById("game").style.display = "none";
 }
 function shopClose() {
     document.getElementById("HamC").style.display = "none";
     document.getElementById("HamO").style.display = "block";
     document.getElementById("shop").style.display = "none";
-    document.getElementById("game").style.display = "table";
 }
 //SAVE
 function Save() {
