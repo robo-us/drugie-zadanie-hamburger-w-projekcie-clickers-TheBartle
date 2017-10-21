@@ -37,14 +37,14 @@ let GrandadUpgradeCost = 800;
 
 function addMoney(number) {
     Money = Money + number;
-    document.getElementById("MoneyCount").innerHTML = Money;
+    document.getElementById("MoneyCount").innerHTML = Money.toFixed(2);
 }
 function BuyBakers() {
     if (Money >= BakersCost) {
         Money -= BakersCost;
         BakersCost = BakersCost + 14;
         Bakers += 1;
-        BakersPower += 0.3;
+        BakersPower += 0.2;
         document.getElementById("Bakers").innerHTML = Bakers;
         document.getElementById("BakersCost").innerHTML = BakersCost;
         cor.play();

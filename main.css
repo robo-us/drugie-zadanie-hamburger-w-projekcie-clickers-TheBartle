@@ -17,11 +17,12 @@ body{
 #shop{
   background: rgb(65, 65, 65);
   font-size: 32px;
-  position: relative;
-  overflow: auto;
+  position: fixed;
+  /*overflow: auto;*/
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  width: 25%;
 }
 .counter{
     margin-left: auto;
