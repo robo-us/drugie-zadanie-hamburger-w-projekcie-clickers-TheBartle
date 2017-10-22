@@ -36,7 +36,8 @@
 
     <span class="Shop">Shop</span><br />
     
-    <span class="shopB">Bakers: </span><span id="Bakers">0</span> | <span class="Cost">Cost: </span><span id="BakersCost">20</br>
+    <span class="shopB">Bakers: </span><span id="Bakers">0</span><br />
+    <span class="Cost">Cost: </span><span id="BakersCost">50</span><br />
     <button class="buyBT" onclick="BuyBakers();">-!BUY!-</button><br />
 
     <span>------</span><br />
@@ -58,6 +59,11 @@
 
     <span id="upgrades">UPGRADES:</span><br />
 
+    <span class="BakersUpgrade">Click UPGRADE: </span><span id="ClicksUpgrade">0</span><br />
+    <span class="Cost">Cost: </span><span id="ClickUpgradeCost">30</span><br />
+    <button class="buyBT" onclick="BuyClickUpgrade();">-!BUY!-</button><br />
+    <span>------</span><br />
+    
     <span class="shopB">Improvements to bakers (x2): </span><span id="BakersUpgrade">0</span><br />
     <span class="Cost">Cost: </span><span id="BakersUpgradeCost">200</span><br />
     <button class="buyBT" onclick="BuyBakersUpgrade();">-!BUY!-</button><br />
@@ -74,17 +80,11 @@
     <button class="buyBT" onclick="BuyGrandadUpgrade();">-!BUY!-</button><br />
     
     <span>------</span><br />
-    
-    <span class="BakersUpgrade">Click UPGRADE: </span><span id="ClicksUpgrade">0</span><br />
-    <span class="Cost">Cost: </span><span id="ClickUpgradeCost">30</span><br />
-    <button class="buyBT" onclick="BuyClickUpgrade();">-!BUY!-</button><br />
-    <span>------</span><br />
-<!--    ------------------------------------------------------GO TO-->
-    
-    
     </div>
-  <div id="game">
+    
 
+    
+  <div id="game">
       <img src="img/cookie.png" class="cookie active" onclick="addMoney(Click);"><br />
        <div class="counter">
         <span id="MoneyCount">0.00</span>
@@ -92,10 +92,11 @@
         <button class="save BT" onclick="Save()">SAVE</button>
            <button class="load BT" onclick="Load()">LOAD</button>
         <button class="reset BT" onclick="Reset()">RESET</button><br />
-<!--              ----- GO TO-->
        </div>
    </div>
-      <!--Shop----------------------------SHOP--------------------------------------------------->
+   
    <script src="game.js"></script>
+    </div>
+    
 </body>
 </html>

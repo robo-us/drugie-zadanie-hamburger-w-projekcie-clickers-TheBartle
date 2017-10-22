@@ -41,10 +41,10 @@ function addMoney(number) {
 }
 function BuyBakers() {
     if (Money >= BakersCost) {
-        Money -= BakersCost;
+        Money = Money - BakersCost;
         BakersCost = BakersCost + 14;
-        Bakers += 1;
-        BakersPower += 0.3;
+        Bakers = Bakers + 1;
+        BakersPower = BakersPower + 0.3;
         document.getElementById("Bakers").innerHTML = Bakers;
         document.getElementById("BakersCost").innerHTML = BakersCost;
         cor.play();
@@ -159,10 +159,6 @@ window.setInterval(
 window.setInterval(
       function(){
       addMoney(GrandadPower);
-  }, 1000);
-window.setInterval(
-      function(){
-      addMoney(CookieRoobotPower);
   }, 1000);
 
 function shopOpen() {
