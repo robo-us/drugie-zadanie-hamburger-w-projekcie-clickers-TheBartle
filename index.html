@@ -6,31 +6,19 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-      <img src="img/hamburger.svg" alt="MENU" id="HamO" onclick="shopOpen()">
-      <img src="img/hamburger.svg" alt="MENU" style="display:none;" id="HamC" onclick="shopClose()">
-      
-<!--
-      <header>
       <h1>Clicker Game</h1>
         <nav>
-          <a href="#" class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </a>
-          <ul class="clearfix menu">
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Upgrade</a></li>
-            <li><a href="#">Save</a></li>
-            <li><a href="#">Load</a></li>
-            <li><a href="#">Reset</a></li>
+          <ul class="clearfix">
+            <li><a href="#" onclick="Save()" >Save</a></li>
+            <li><a href="#" onclick="Load()" >Load</a></li>
+            <li><a href="#" onclick="Reset()">Reset</a></li>
           </ul>
         </nav>
-      </header>
--->
+      
+      <img src="img/hamburger.svg" alt="MENU" id="HamO" onclick="shopOpen()">
+      <img src="img/hamburger.svg" alt="MENU" style="display:none;" id="HamC" onclick="shopClose()">
       
 <div id="shop" class="animate-left" style="display: none;">
 
@@ -89,9 +77,6 @@
        <div class="counter">
         <span id="MoneyCount">0.00</span>
         <img src="img/Dollar.png" alt="Cookie" class="miniCookie"><br />
-        <button class="save BT" onclick="Save()">SAVE</button>
-           <button class="load BT" onclick="Load()">LOAD</button>
-        <button class="reset BT" onclick="Reset()">RESET</button><br />
        </div>
    </div>
    
