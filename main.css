@@ -1,10 +1,10 @@
 *, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html, body {
-  height: 100%;
+    height: 100%;
 }
 body{
     background: url("img/Wallpaper.png");
@@ -12,9 +12,35 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 h1 {
-  padding: 30px 0;
-  font: 1.5em 'Open Sans', sans-serif;
-  text-align: center;
+    padding: 30px 0;
+    font: 1.5em 'Open Sans', sans-serif;
+    text-align: center;
+}
+#food{
+    transition: 1.5s;
+    width: 100%;
+    height: 30px;
+    background: url("img/pizza.png");
+    background-size: 30px 30px;
+    text-align: right;
+}
+#food-text{
+    background: rgba(0, 0, 0, 0.81);
+    color: white;
+    font-size: 20px;
+}
+#health{
+    transition: 1.5s;
+    width: 100%;
+    height: 30px;
+    background: url("img/heart.png");
+    background-size: 30px 30px;
+    text-align: right;
+}
+#health-text{
+    background: rgba(0, 0, 0, 0.81);
+    color: white;
+    font-size: 20px;
 }
 #game{
     margin-left: auto;
@@ -25,15 +51,26 @@ h1 {
     display: table;
 }
 #shop{
-  background: rgb(65, 65, 65);
-  font-size: 32px;
-  position: fixed;
-  overflow-y: auto;
-  max-height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 25%;
+    background: rgb(65, 65, 65);
+    font-size: 28px;
+    position: fixed;
+    overflow: auto;
+    height: auto;
+    max-height: 100%;
+    text-align: center;
+    width: 25%;
+}
+.cookie{
+    background: url("img/cookie.png");
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+    margin: 0;
+    width: 300px;
+    height: 300px;
+    transform: scale(0.96);
+    transition: 0.1s;
+    position: relative;
+    padding: 0;
 }
 .counter{
     margin-left: auto;
@@ -42,19 +79,6 @@ h1 {
     text-align: center;
     font-family: 'Purpose', Fallback, sans-serif !important;
     background: rgba(255, 255, 255, 0.35);
-}
-.cookie{
-    margin: 0;
-    width: 300px;
-    height: 300px;
-    transform: scale(0.96);
-    transition: 0.1s;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
-    border-radius: 30%;
-    position: relative;
-    padding: 0;
 }
 .active{
     transform: scale(1);
@@ -86,6 +110,7 @@ h1 {
     border: 2px solid #555555;
     background-color: white;
     color: black;
+    text-decoration: none;
     text-align: center;
     font-size: 30px;
     width: 150px;
@@ -124,60 +149,3 @@ h1 {
 @keyframes animateright{
     from{right:-300px;opacity:0} to{left:0;opacity:1}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-ul {
-  list-style: none;
-  max-width: 800px;
-  margin: 0 auto;
-}
-nav {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-ul a {
-  display: block;
-  padding: 20px;
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  color: #fafafa;
-  text-decoration: none;
-  transition: 0.4s;
-}
-
-ul a:hover {
-  background: #eee;
-  color: #434343;
-}
-
-nav li {
-  float: left;
-  width: 33.33333333333333%;
-  border-right: 1px dashed #ffffff;
-  border-left: 1px dashed #ffffff;
-}
-
-ul > li

@@ -1,12 +1,17 @@
-$('img.cookie').on('click', function() {
-        $('img.cookie').toggleClass('active');
+$('div.cookie').on('click', function() {
+        $('div.cookie').toggleClass('active');
     });
 
 let Money = 0;
+var food = 100;
+var health = 100;
+
+
 let Click = 1;
 let ClickUpgradeCost = 30;
 let ClicksUpgrade = 0;
 
+let help = new Audio('sound/54789.mp3');
 let cor = new Audio('sound/Tink.mp3');
 let icor = new Audio('sound/Dong.mp3');
 
@@ -161,6 +166,29 @@ window.setInterval(
       addMoney(GrandadPower);
   }, 1000);
 
+var foodTimer = window.setInterval(function(){
+let elemFood = document.getElementById("food");food = food - 1;elemFood.style.width = food + '%';if (food == 15) {    help.play();    alert("Attention you are hungry!!!");};if (food == 14) {    help.play();;};if (food == 12) {    help.play();};if (food == 10) {    help.play();    alert("Attention you are hungry!!!");};if (food == 5) {    help.play();    alert("Attention you are hungry!!!")}}, 3500);
+window.setInterval(
+    function() {
+        if (food == 0) {
+            health = health - 1;
+            let elemHealth = document.getElementById("health");
+            elemHealth.style.width = health + "%";
+            clearInterval(foodTimer);
+    document.getElementById("HamC").style.display = "none";
+    document.getElementById("HamO").style.display = "block";
+    document.getElementById("shop").style.display = "none";
+    }
+}
+,300)
+window.setInterval(
+function() {
+    if (health == 0) {
+            alert("GAME OVER!!!");
+            location.reload();
+            food = food + 1;
+            }
+},10)
 function shopOpen() {
     document.getElementById("shop").style.display = "block";
     document.getElementById("HamO").style.display = "none";
@@ -183,10 +211,10 @@ function Save() {
     localStorage.setItem("grandmaPower", GrandmaPower);
     localStorage.setItem("grandad", Grandad);
     localStorage.setItem("grandadCost", GrandadCost);
-    localStorage.setItem("grandadPower", GrandadPower);      
+    localStorage.setItem("grandadPower", GrandadPower);
     localStorage.setItem("cookieRoobot", CookieRoobot);
     localStorage.setItem("cookieRoobotCost", CookieRoobotCost);
-    localStorage.setItem("cookieRoobotPower", CookieRoobotPower);  
+    localStorage.setItem("cookieRoobotPower", CookieRoobotPower);
     localStorage.setItem("bakersUpgrade", BakersUpgrade);
     localStorage.setItem("bakersUpgradeCost", BakersUpgradeCost);
     localStorage.setItem("click", Click);
@@ -198,26 +226,26 @@ function Load() {
         alert("Congratulations! Load saved.");
         cor.play();
         Money = Money = localStorage.getItem("money"); Money++; Money--;
-        
+
         Bakers = Bakers = localStorage.getItem("bakers"); Bakers++; Bakers--;
         BakersCost = BakersCost = localStorage.getItem("bakersCost"); BakersCost++; BakersCost--;
         BakersPower = BakersPower = localStorage.getItem("bakersPower"); BakersPower++; BakersPower--;
-        
+
         Grandma = Grandma = localStorage.getItem("grandma"); Grandma++; Grandma--;
         GrandmaCost = GrandmaCost = localStorage.getItem("grandmaCost"); GrandmaCost++; GrandmaCost--;
         GrandmaPower = GrandmaPower = localStorage.getItem("grandmaPower"); GrandmaPower++; GrandmaPower--;
-        
+
         Grandad = Grandad = localStorage.getItem("grandad"); Grandad++; Grandad--;
         GrandadCost = GrandadCost = localStorage.getItem("grandadCost"); GrandadCost++; GrandadCost--;
         GrandadPower = GrandadPower = localStorage.getItem("granadaPower"); GrandadPower++; GrandadPower--;
-        
+
         CookieRoobot = CookieRoobot = localStorage.getItem("cookieRoobot"); CookieRoobot++; CookieRoobot--;
         CookieRoobotCost = CookieRoobotCost = localStorage.getItem("cookieRoobotCost"); CookieRoobotCost++; CookieRoobotCost--;
         CookieRoobotPower = CookieRoobotPower = localStorage.getItem("cookieRoobotPower"); CookieRoobotPower++; CookieRoobotPower--;
-        
+
         BakersUpgrade = BakersUpgrade = localStorage.getItem("bakersUpgrade"); BakersUpgrade++; BakersUpgrade--;
         BakersUpgradeCost = BakersUpgradeCost = localStorage.getItem("bakersUpgradeCost"); BakersUpgradeCost++;     BakersUpgradeCost--;
-        
+
         Click = Click = localStorage.getItem("click"); Click++; Click--;
         ClicksUpgrade = ClickUpgrade = localStorage.getItem("clicksUpgrade"); ClickUpgrade++; ClickUpgrade--;
         ClickUpgradeCost = ClickUpgradeCost = localStorage.getItem("clickUpgradeCost"); ClickUpgradeCost++; ClickUpgradeCost--;
@@ -226,7 +254,7 @@ function Load() {
     else {
         icor.play();
         alert("You don't have SAVE!!! I can't load");
-    }   
+    }
 };
 function Reset() {
     let c = confirm("Do you want reset progress?");
