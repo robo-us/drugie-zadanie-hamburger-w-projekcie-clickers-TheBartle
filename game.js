@@ -167,28 +167,43 @@ window.setInterval(
   }, 1000);
 
 var foodTimer = window.setInterval(function(){
-let elemFood = document.getElementById("food");food = food - 1;elemFood.style.width = food + '%';if (food == 15) {    help.play();    alert("Attention you are hungry!!!");};if (food == 14) {    help.play();;};if (food == 12) {    help.play();};if (food == 10) {    help.play();    alert("Attention you are hungry!!!");};if (food == 5) {    help.play();    alert("Attention you are hungry!!!")}}, 3500);
+    let elemFood = document.getElementById("food");
+        if (food == 0) {
+            food = 0;
+        }
+            else{
+                food--;
+            }
+        
+        elemFood.style.width = food + '%';
+        if (food == 15) {
+            help.play();
+            alert("Attention you are hungry!!!");
+        };
+            if (food == 10) {
+                help.play();
+                alert("Attention you are hungry!!!");
+            };
+            if (food == 5) {
+                help.play();
+                alert("Attention you are hungry!!!")
+            }
+}, 3500);
 window.setInterval(
     function() {
         if (food == 0) {
             health = health - 1;
             let elemHealth = document.getElementById("health");
             elemHealth.style.width = health + "%";
-            clearInterval(foodTimer);
-    document.getElementById("HamC").style.display = "none";
-    document.getElementById("HamO").style.display = "block";
-    document.getElementById("shop").style.display = "none";
-    }
-}
-,300)
-window.setInterval(
-function() {
-    if (health == 0) {
+            
+        if (health == 0) {
             alert("GAME OVER!!!");
             location.reload();
             food = food + 1;
             }
-},10)
+    }
+}
+,300);
 function shopOpen() {
     document.getElementById("shop").style.display = "block";
     document.getElementById("HamO").style.display = "none";
