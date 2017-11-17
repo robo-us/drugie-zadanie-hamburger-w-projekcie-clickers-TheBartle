@@ -44,6 +44,14 @@ function addMoney(number) {
     Money = Money + number;
     document.getElementById("MoneyCount").innerHTML = Money.toFixed(2);
 }
+function buyFood() {
+  if (food <= 91) {
+    if (Money >= 19) {
+      Money = Money - 19;
+      food = food + 9;
+    }
+  }
+}
 function BuyBakers() {
     if (Money >= BakersCost) {
         Money = Money - BakersCost;
@@ -174,7 +182,7 @@ var foodTimer = window.setInterval(function(){
             else{
                 food--;
             }
-        
+
         elemFood.style.width = food + '%';
         if (food == 15) {
             help.play();
@@ -195,7 +203,7 @@ window.setInterval(
             health = health - 1;
             let elemHealth = document.getElementById("health");
             elemHealth.style.width = health + "%";
-            
+
         if (health == 0) {
             alert("GAME OVER!!!");
             location.reload();
@@ -240,7 +248,7 @@ function Load() {
     if("money" in localStorage){
         alert("Congratulations! Load saved.");
         cor.play();
-        Money = Money = localStorage.getItem("money"); Money++; Money--;
+        Money = Money = localStorage.getItem("money");
 
         Bakers = Bakers = localStorage.getItem("bakers"); Bakers++; Bakers--;
         BakersCost = BakersCost = localStorage.getItem("bakersCost"); BakersCost++; BakersCost--;
