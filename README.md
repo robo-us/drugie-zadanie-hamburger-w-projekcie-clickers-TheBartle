@@ -11,4 +11,6 @@
 - [ ] Menu przewijane.
 - [x] Zablokowanie ciasteczka żeby nie można było przeciągnąć.
 - [ ] Dodać sekcję z prawej strony z kupionymi UPGRADAMI.
-- [ ] ( http://orteil.dashnet.org/cookieclicker/ ) 
+- [ ] Po najechaniu dodać napisy.
+
+### ( http://orteil.dashnet.org/cookieclicker/ )
