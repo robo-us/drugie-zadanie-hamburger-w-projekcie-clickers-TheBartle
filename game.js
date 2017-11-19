@@ -246,6 +246,8 @@ function Save() {
     localStorage.setItem("click", Click);
     localStorage.setItem("clicksUpgrade", ClicksUpgrade);
     localStorage.setItem("clickUpgradeCost", ClickUpgradeCost);
+    localStorage.setItem("food", food);
+    localStorage.setItem("health", health);
 };
 function Load() {
     if("money" in localStorage){
@@ -275,6 +277,9 @@ function Load() {
         Click = Click = localStorage.getItem("click"); Click++; Click--;
         ClicksUpgrade = ClickUpgrade = localStorage.getItem("clicksUpgrade"); ClickUpgrade++; ClickUpgrade--;
         ClickUpgradeCost = ClickUpgradeCost = localStorage.getItem("clickUpgradeCost"); ClickUpgradeCost++; ClickUpgradeCost--;
+
+        food = food = localStorage.getItem("food"); food++; food--;
+        health = health = localStorage.getItem("health"); health++; health--;
     //-------------------------------------------------------//
     }
     else {
