@@ -28,7 +28,7 @@ let GrandadCost = 1000;
 let GrandadPower = 0;
 
 let CookieRoobot = 0;
-let CookieRoobotCost = 3000;
+let CookieRoobotCost = 2000;
 let CookieRoobotPower = 0;
 
 let BakersUpgrade = 0;
@@ -40,6 +40,9 @@ let GrandmaUpgradeCost = 425;
 let GrandadUpgrade = 0;
 let GrandadUpgradeCost = 800;
 
+var xAlert = document.getElementsByClassName("alert");
+let elemFood = document.getElementById("food");
+
 function addMoney(number) {
     Money = Money + number;
     document.getElementById("MoneyCount").innerHTML = Money.toFixed(2);
@@ -49,6 +52,7 @@ function buyFood() {
     if (Money >= 19) {
       Money = Money - 19;
       food = food + 9;
+      document.getElementById("food").style.width = food + '%';
     }
   }
 }
@@ -97,10 +101,10 @@ function BuyGrandad() {
 function BuyCookieRoobot() {
     if (Money >= CookieRoobotCost) {
         Money = Money - CookieRoobotCost;
-        CookieRoobotCost = CookieRoobotCost + 972;
+        CookieRoobotCost = CookieRoobotCost + 679;
         CookieRoobot = CookieRoobot + 1;
         document.getElementById("CookieRoobot").innerHTML = CookieRoobot;
-        document.getElementById("CookieRoobot").innerHTML = CookieRoobotCost;
+        document.getElementById("CookieRoobotCost").innerHTML = CookieRoobotCost;
         GrandadPower = GrandadPower + 4;
         cor.play();
     }
@@ -175,7 +179,6 @@ window.setInterval(
   }, 1000);
 
 var foodTimer = window.setInterval(function(){
-    let elemFood = document.getElementById("food");
         if (food == 0) {
             food = 0;
         }
@@ -186,15 +189,15 @@ var foodTimer = window.setInterval(function(){
         elemFood.style.width = food + '%';
         if (food == 15) {
             help.play();
-            alert("Attention you are hungry!!!");
+            xAlert[0].style.display = "block";
         };
             if (food == 10) {
                 help.play();
-                alert("Attention you are hungry!!!");
+                xAlert[0].style.display = "block";
             };
             if (food == 5) {
                 help.play();
-                alert("Attention you are hungry!!!")
+                xAlert[0].style.display = "block";
             }
 }, 3500);
 window.setInterval(

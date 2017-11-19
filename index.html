@@ -4,83 +4,95 @@
     <meta charset="UTF-8">
     <title>Clicker Cookie By TheBartle</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="shop.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-      <div id="food"><span id="food-text">FOOD</span></div>
-      <button class="BT" onclick="buyFood()">BUY FOOD</button>
-      <div id="health"><span id="health-text">HEALTH</span></div>
-      <img src="img/hamburger.svg" alt="MENU" id="HamO" onclick="shopOpen()">
-      <img src="img/hamburger.svg" alt="MENU" style="display:none;" id="HamC" onclick="shopClose()">
-
-
-<div id="shop" class="animate-left" style="display: none;">
+  <div class="wrap">
+  <div class="left">
+    <div id="food"><span id="food-text">FOOD</span></div>
+    <button class="BT" onclick="buyFood()">BUY FOOD (19)</button>
+    <div id="health"><span id="health-text">HEALTH</span></div>
 
 
-    <span class="Shop">Shop</span><br />
 
-    <span class="shopB">Bakers: </span><span id="Bakers">0</span><br />
-    <span class="Cost">Cost: </span><span id="BakersCost">50</span><br />
-    <button class="buyBT" onclick="BuyBakers();">-!BUY!-</button><br />
+  </div>
+  <div class="right">
+    <div id="shop">
 
-    <span>------</span><br />
+      <h1 class="bG">SHOP</h1>
+      <div class="sBG" onclick="BuyBakers();">
+      <span>Bakers: </span><span id="Bakers">0</span>
+      <span class="Cost">Cost: </span><span id="BakersCost">50</span>
+      </div>
 
-    <span class="shopB">Grandmas: </span><span id="Grandma">0</span><br />
-    <span class="Cost">Cost: </span><span id="GrandmaCost">400</span><br />
-    <button class="buyBT" onclick="BuyGrandma();">-!BUY!-</button><br />
+      <div class="sBG" onclick="BuyGrandma();">
+      <span>Grandmas: </span><span id="Grandma">0</span>
+      <span class="Cost">Cost: </span><span id="GrandmaCost">400</span>
+      </div>
 
-     <span>------</span><br />
+      <div class="sBG" onclick="BuyGrandad();">
+      <span>Grandad: </span><span id="Grandad">0</span>
+      <span class="Cost">Cost: </span><span id="GrandadCost">1000</span>
+      </div>
 
-    <span class="shopB">Grandad: </span><span id="Grandad">0</span><br />
-    <span class="Cost">Cost: </span><span id="GrandadCost">1000</span><br />
-    <button class="buyBT" onclick="BuyGrandad();">-!BUY!-</button><br />
+      <div class="sBG" onclick="BuyCookieRoobot();">
+      <span>CookieRoobot: </span><span id="CookieRoobot">0</span>
+      <span class="Cost">Cost: </span><span id="CookieRoobotCost">300</span>
+      </div>
 
-    <span>------</span><br />
-    <span class="shopB">CookieRoobot: </span><span id="CookieRoobot">0</span><br />
-    <span class="Cost">Cost: </span><span id="CookieRoobotCost">300</span><br />
-    <button class="buyBT" onclick="BuyCookieRoobot();">-!BUY!-</button><br />
+      <h1 class="bG">UPGRADES</h1>
 
-    <span id="upgrades">UPGRADES:</span><br />
+      <div class="sBG" onclick="BuyClickUpgrade();">
+      <span class="BakersUpgrade">Click UPGRADE: </span><span id="ClicksUpgrade">0</span>
+      <span class="Cost">Cost: </span><span id="ClickUpgradeCost">30</span>
+      </div>
 
-    <span class="BakersUpgrade">Click UPGRADE: </span><span id="ClicksUpgrade">0</span><br />
-    <span class="Cost">Cost: </span><span id="ClickUpgradeCost">30</span><br />
-    <button class="buyBT" onclick="BuyClickUpgrade();">-!BUY!-</button><br />
-    <span>------</span><br />
+      <div class="sBG" onclick="BuyBakersUpgrade();">
+      <span>Bakers' improvements (x2): </span><span id="BakersUpgrade">0</span><br />
+      <span class="Cost">Cost: </span><span id="BakersUpgradeCost">200</span>
+      </div>
 
-    <span class="shopB">Improvements to bakers (x2): </span><span id="BakersUpgrade">0</span><br />
-    <span class="Cost">Cost: </span><span id="BakersUpgradeCost">200</span><br />
-    <button class="buyBT" onclick="BuyBakersUpgrade();">-!BUY!-</button><br />
+      <div class="sBG" onclick="BuyGrandmaUpgrade();">
+      <span>Improvements to grandma (x2): </span><span id="GrandmaUpgrade">0</span><br />
+      <span class="Cost">Cost: </span><span id="GrandmaUpgradeCost">425</span>
+      </div>
 
-    <span>------</span><br />
-    <span class="shopB">Improvements to grandma (x2): </span><span id="GrandmaUpgrade">0</span><br />
-    <span class="Cost">Cost: </span><span id="GrandmaUpgradeCost">425</span><br />
-    <button class="buyBT" onclick="BuyGrandmaUpgrade();">-!BUY!-</button><br />
-
-    <span>------</span><br />
-
-    <span class="shopB">Improvements to grandad (x2): </span><span id="GrandadUpgrade">0</span><br />
-    <span class="Cost">Cost: </span><span id="GrandadUpgradeCost">800</span><br />
-    <button class="buyBT" onclick="BuyGrandadUpgrade();">-!BUY!-</button><br />
-
-    <span>------</span><br />
+      <div class="sBG" onclick="BuyGrandadUpgrade();">
+      <span>Improvements to grandad (x2): </span><span id="GrandadUpgrade">0</span><br />
+      <span class="Cost">Cost: </span><span id="GrandadUpgradeCost">800</span>
+      </div>
     </div>
 
-
-
-  <div id="game">
-<!--      <img src="img/cookie.png" class="cookie active" onclick="addMoney(Click);"><br />-->
+  </div>
+  <div class="center">
+    <div id="game">
+        <div class="alert" style="display:none;">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <strong>Attention you are hungry!!!</strong>
+        </div>
+      <!--      <img src="img/cookie.png" class="cookie active" onclick="addMoney(Click);"><br />-->
       <div class="cookie active" onclick="addMoney(Click);"></div><br />
-       <div class="counter">
+      <div class="counter">
         <span id="MoneyCount">0.00</span>
         <img src="img/Dollar.png" alt="Cookie" class="miniCookie"><br />
-       </div>
-       <a href="#" class="BT" onclick="Save()" >Save</a>
-       <a href="#" class="BT" onclick="Load()" >Load</a>
-       <a href="#" class="BT" onclick="Reset()">Reset</a>
-   </div>
+      </div>
+      <a href="#" class="BT" onclick="Save()" >Save</a>
+      <a href="#" class="BT" onclick="Load()" >Load</a>
+      <a href="#" class="BT" onclick="Reset()">Reset</a>
+    </div>
+
+  </div>
+      </div>
+      <!-- <img src="img/hamburger.svg" alt="MENU" id="HamO" onclick="shopOpen()">
+      <img src="img/hamburger.svg" alt="MENU" style="display:none;" id="HamC" onclick="shopClose()"> -->
+  </div>
+
+
+
+
 
 
    <script src="game.js"></script>

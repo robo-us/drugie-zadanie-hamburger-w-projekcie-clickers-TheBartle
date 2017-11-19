@@ -5,6 +5,7 @@
 }
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 body{
     background: url("img/Wallpaper.png");
@@ -12,9 +13,28 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 h1 {
-    padding: 30px 0;
+    padding: 0 0;
     font: 1.5em 'Open Sans', sans-serif;
     text-align: center;
+}
+.wrap{
+    text-align:center;
+    height: 100%;
+}
+.left{
+    float: left;
+    width: 32%;
+    height: 100%;
+    border-right: 8px dashed rgba(54, 210, 116, 0.82);
+}
+.right{
+    float: right;
+    width: 32%;
+    height: 100%;
+    border-left: 8px dashed rgba(54, 210, 116, 0.82);
+}
+.center{
+    margin:0 auto !important;
 }
 #food{
     transition: 1.5s;
@@ -50,16 +70,6 @@ h1 {
     height: auto;
     display: table;
 }
-#shop{
-    background: rgb(65, 65, 65);
-    font-size: 28px;
-    position: fixed;
-    overflow: auto;
-    height: auto;
-    max-height: 100%;
-    text-align: center;
-    width: 25%;
-}
 .cookie{
     background: url("img/cookie.png");
     background-size: 300px 300px;
@@ -87,15 +97,8 @@ h1 {
     width: 120px;
     height: 42px;
 }
-.Shop{
-    font-size: 35px !important;
-}
-.Cost{
-    font-size: 25px;
-    color: #c44242;
-}
 .buyBT{
-    font-size: 25px !important;
+    font-size: 20px !important;
     background: rgba(178, 178, 178, 0.7);
     border: none;
     border: 2px solid rgba(255, 255, 255, 0.53);
@@ -112,7 +115,7 @@ h1 {
     color: black;
     text-decoration: none;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     width: 150px;
     height: 50px;
     border-radius: 3px;
@@ -125,6 +128,25 @@ h1 {
 }
 .upgrades{
     font-size: 35px !important;
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.closebtn:hover {
+    color: black;
 }
 #MoneyCount{
     text-align: center;

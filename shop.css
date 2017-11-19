@@ -1,0 +1,20 @@
+#shop{
+    font-size: 28px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.bG{
+  padding: 0 0;
+  background-color: #3ec3e0;
+  border-top: 5px solid #0d0d0d;
+  border-bottom: 5px solid #0d0d0d;
+}
+.sBG{
+  background: rgb(62, 46, 46);
+  border-bottom: 2px solid #ed6326;
+}
+.Cost{
+  font-size: 25px;
+  color: #c44242;
+}
