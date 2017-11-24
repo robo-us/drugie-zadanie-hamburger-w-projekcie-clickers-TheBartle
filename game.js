@@ -6,7 +6,6 @@ let Money = 0;
 var food = 100;
 var health = 100;
 
-
 let Click = 1;
 let ClickUpgradeCost = 30;
 let ClicksUpgrade = 0;
@@ -47,6 +46,7 @@ function addMoney(number) {
     Money = Money + number;
     document.getElementById("MoneyCount").innerHTML = Money.toFixed(2);
 }
+
 function buyFood() {
   if (food <= 91) {
     if (Money >= 19) {
@@ -215,16 +215,16 @@ window.setInterval(
     }
 }
 ,300);
-function shopOpen() {
-    document.getElementById("shop").style.display = "block";
-    document.getElementById("HamO").style.display = "none";
-    document.getElementById("HamC").style.display = "block";
-}
-function shopClose() {
-    document.getElementById("HamC").style.display = "none";
-    document.getElementById("HamO").style.display = "block";
-    document.getElementById("shop").style.display = "none";
-}
+// function shopOpen() {
+    // document.getElementById("shop").style.display = "block";
+    // document.getElementById("HamO").style.display = "none";
+    // document.getElementById("HamC").style.display = "block";
+// }
+// function shopClose() {
+    // document.getElementById("HamC").style.display = "none";
+    // document.getElementById("HamO").style.display = "block";
+    // document.getElementById("shop").style.display = "none";
+// }
 //SAVE
 function Save() {
     cor.play();
@@ -253,7 +253,7 @@ function Load() {
     if("money" in localStorage){
         alert("Congratulations! Load saved.");
         cor.play();
-        Money = Money = localStorage.getItem("money");
+        Money = localStorage.getItem("money"); Money++; Money--;
 
         Bakers = Bakers = localStorage.getItem("bakers"); Bakers++; Bakers--;
         BakersCost = BakersCost = localStorage.getItem("bakersCost"); BakersCost++; BakersCost--;
@@ -275,7 +275,7 @@ function Load() {
         BakersUpgradeCost = BakersUpgradeCost = localStorage.getItem("bakersUpgradeCost"); BakersUpgradeCost++;     BakersUpgradeCost--;
 
         Click = Click = localStorage.getItem("click"); Click++; Click--;
-        ClicksUpgrade = ClickUpgrade = localStorage.getItem("clicksUpgrade"); ClickUpgrade++; ClickUpgrade--;
+        ClicksUpgrade = parseInt(localStorage.getItem("clicksUpgrade")); ClickUpgrade++; ClickUpgrade--;
         ClickUpgradeCost = ClickUpgradeCost = localStorage.getItem("clickUpgradeCost"); ClickUpgradeCost++; ClickUpgradeCost--;
 
         food = food = localStorage.getItem("food"); food++; food--;
